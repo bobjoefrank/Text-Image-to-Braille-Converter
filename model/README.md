@@ -14,7 +14,6 @@ pip3 install tensorflow
 ```
 Install dependencies.
 ```bash
-cd model
 pip3 install -r requirements.txt
 ```
 # Usage
@@ -29,6 +28,16 @@ model, mapping = load_model("model/bin")
 print(predict("input.png", model, mapping)) 
 # {'prediction': 'H', 'confidence': '99.755'}
 ```
+# Train
+Don't train on the Raspberry Pi. It is too computationally expensive.
 
+Go to https://www.kaggle.com/crawford/emnist.
+Download ```emnist-balanced-train.csv``` and ```emnist-balanced-test.csv```.
 
+On your local computer,
+```bash
+python3 training.py -f path/to/emnist-balanced-train.csv -g path/to/emnist-balanced-test.csv --verbose
+```
+
+After successfully training, the newly trained model is saved to the ```bin``` directory.
 
