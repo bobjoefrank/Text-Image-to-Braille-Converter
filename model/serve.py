@@ -37,11 +37,12 @@ def predict(img, model, mapping):
         class prediction.
     '''
     # read parsed image back in 8-bit, black and white mode (L)
-    x = imread(img, mode='L')
-    x = np.invert(x)
+    # x = imread(img, mode='L')
+    # x = np.invert(x)
+    x = img
 
     # Visualize new array
-    imsave('resized.png', x)
+    # imsave('resized.png', x)
     x = imresize(x,(28,28))
 
     # reshape image data for use in neural network

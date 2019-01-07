@@ -3,4 +3,5 @@ model/bin/.gitkeep
 model/bin/mapping.p
 model/bin/model.h5
 model/bin/model.yaml
-
+virtualenv
+*.pyc
