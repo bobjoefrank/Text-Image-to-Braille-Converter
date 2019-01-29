@@ -1,4 +1,4 @@
-resized.png
+*.png
 model/bin/.gitkeep
 model/bin/mapping.p
 model/bin/model.h5
