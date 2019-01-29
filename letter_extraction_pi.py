@@ -51,7 +51,7 @@ def main():
                     invert_img.itemset((i,j),0)
         
         # show cropped frame
-        cv2.rectangle(frame,(width//2-18,height//2-30),(width//2+18,height//2+30),(0,0,255),3,-1)
+        cv2.rectangle(image,(width//2-18,height//2-30),(width//2+18,height//2+30),(0,0,255),3,-1)
         cv2.imshow("Frame", image)
         key = cv2.waitKey(1) & 0xFF
         cv2.imshow('invert_img', invert_img)
