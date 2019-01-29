@@ -32,12 +32,8 @@ def main():
         # and occupied/unoccupied text
         image = frame.array
     
-        # show the frame
-        cv2.imshow("Frame", image)
-        key = cv2.waitKey(1) & 0xFF
-
         # image processing
-        crop_img = frame[(int)(height/2-30):(int)(height/2+30), (int)(width/2-18):(int)(width/2+18)]
+        crop_img = image[(int)(height/2-30):(int)(height/2+30), (int)(width/2-18):(int)(width/2+18)]
         crop_gray = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
         # equi_gray = cv2.equalizeHist(crop_gray)
         clipLimit = 10.0
@@ -55,6 +51,9 @@ def main():
                     invert_img.itemset((i,j),0)
         
         # show cropped frame
+        cv2.rectangle(frame,(width//2-18,height//2-30),(width//2+18,height//2+30),(0,0,255),3,-1)
+        cv2.imshow("Frame", image)
+        key = cv2.waitKey(1) & 0xFF
         cv2.imshow('invert_img', invert_img)
 
         # make letter prediction
