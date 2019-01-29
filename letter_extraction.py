@@ -45,6 +45,7 @@ def main():
             height, width, channels = frame.shape
             crop_img = frame[(int)(height/2-30):(int)(height/2+30), (int)(width/2-18):(int)(width/2+18)]
             # cv2.rectangle(frame,(width//2-30,height//2-30),(width//2+30,height//2+30),(0,0,255),3,-1)
+            cv2.imwrite('save.png', crop_img)
             cv2.imshow('frame', frame)
             crop_gray = cv2.cvtColor(crop_img, cv2.COLOR_BGR2GRAY)
             # equi_gray = cv2.equalizeHist(crop_gray)
