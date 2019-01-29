@@ -17,6 +17,9 @@ height = 480
 
 def main():
     
+    # Load the model and the mapping.
+    model, mapping = load_model("model/bin")
+
     # initialize the camera and grab a reference to the raw camera capture
     camera = PiCamera()
     camera.resolution = (width, height)
