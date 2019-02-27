@@ -9,6 +9,7 @@ from matplotlib import pyplot as plt
 from scipy import ndimage
 
 from model.serve import load_model, predict
+from servo import *
 
 # bunch of values we can vary
 surfHessian = 500
@@ -62,7 +63,12 @@ def main():
         cv2.imshow('invert_img', invert_img)
 
         # make letter prediction
-        print(predict(invert_img, model, mapping))
+        prediction = predict(invert_img, model, mapping)
+        print(prediction)
+
+        # activate pins for letter prediction if confidence is above certain threshold
+        if float(prediction["confidence"]) >= 70:
+            letter_to_pins(prediction["prediction"])
     
         # clear the stream in preparation for the next frame
         rawCapture.truncate(0)
