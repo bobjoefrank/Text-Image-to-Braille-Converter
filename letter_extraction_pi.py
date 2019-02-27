@@ -12,8 +12,10 @@ from model.serve import load_model, predict
 
 # bunch of values we can vary
 surfHessian = 500
-width = 640
-height = 480
+#width = 640
+#height = 480
+width = 320
+height=240
 
 def main():
     
@@ -23,7 +25,7 @@ def main():
     # initialize the camera and grab a reference to the raw camera capture
     camera = PiCamera()
     camera.resolution = (width, height)
-    camera.framerate = 16
+    camera.framerate = 30
     rawCapture = PiRGBArray(camera, size=(width, height))
     
     # allow the camera to warmup
